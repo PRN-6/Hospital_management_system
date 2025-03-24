@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="auth/login.php">login</a>
+            <a href="auth/register.php">register</a>
+            
+        </nav>
+    </header>
     
 </body>
-</ht~ml>
+</html>
