@@ -7,22 +7,32 @@
     <style>
         body{
             font-family: Arial, sans-serif;
-            background-color:aqua;
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
         }
         .login_div{
             width: 30%;
             margin: 0 auto;
             margin-top : 10%;
             padding : 20px;
-            border: 1px solid #ccc;
+            /* border: 1px solid #ccc; */
             border-radius: 10px;  
             text-align:center;
             background-color: white;
         }
         input{
-            width: 90%;
+            width: 70%;
             padding:10px;
             margin: 10px;
+            border: 1px solid #ccc;
+        }
+        button{
+            cursor:pointer;
+            width: 76%;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            background-color: aqua;
+            height: 40px;
+            margin:20px;
         }
 
     </style>
