@@ -20,10 +20,13 @@
        }
        .login-container{
         background: white;
-        padding:20px;
+        padding:30px;
+        padding-right:60px;
+        padding-left:60px;
         border-radius:10px;
         box-shadow:0 4px 10px rgba(0, 0, 0, 0.1);
-        width:300px;
+        width:400px;
+        height: 300px;
         text-align:center;
        }
        .login-container h2{
@@ -40,10 +43,12 @@
         width:100%;
         padding:10px;
         background:rgb(137, 44, 236);
+        color:white;
         border: none;
         border-radius: 5px;
         cursor:pointer;
         font-size: 16px;
+        margin-top: 10px;
         transition: 0.3s;
        }
        .login-container button:hover{
@@ -72,7 +77,7 @@
             <input type="password" name="password" placeholder="password" requierd>
             <button type="submit">Login</button>
         </form>
-        <p>Don't have an account? <a href="auth/register.php">Sign up</a></p>
+        <p>Don't have an account? <a href="register.php">Sign up</a></p>
     </div>
     
 </body>
