@@ -72,7 +72,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form>
+        <form action="" method="post">
             <input type="text" name="username" placeholder="username" required>
             <input type="password" name="password" placeholder="password" requierd>
             <button type="submit">Login</button>
@@ -82,3 +82,32 @@
     
 </body>
 </html>
+<?php
+session_start();
+include '../connection.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"]; 
+
+    $query = "SELECT * FROM users WHERE uname = ?"; // Query has one placeholder
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("s", $username); // Bind only one parameter (username)
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        if (password_verify($password, $row["password"])) {
+            $_SESSION["user_id"] = $row["id"];
+            $_SESSION["username"] = $row["uname"];
+            header("Location: ../user-dashboard/dashboard.php");
+            exit();
+        } else {
+            echo "Wrong password!";
+        }
+    } else {
+        echo "Username not found!";
+    }
+}
+?>
