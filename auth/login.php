@@ -104,10 +104,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../user-dashboard/dashboard.php");
             exit();
         } else {
-            echo "Wrong password!";
+            echo "<script>alert('Wrong password!');</script>";
         }
     } else {
-        echo "Username not found!";
+        echo "<script>alert('Username not found!');</script>";
     }
 }
 ?>
